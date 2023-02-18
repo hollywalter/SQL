@@ -1,0 +1,33 @@
+-- Create a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, aisle INTEGER);
+INSERT INTO store VALUES (1, "T Shirt", 9.99, 20, 1);
+INSERT INTO store VALUES (2, "Jeans", 19.99, 20, 1);
+INSERT INTO store VALUES (3, "Coat", 39.99, 10, 2);
+INSERT INTO store VALUES (4, "Socks", 6.99, 30, 2);
+INSERT INTO store VALUES (5, "Underwear", 7.99, 30, 2);
+INSERT INTO store VALUES (6, "Bananas", 1.99, 40, 3);
+INSERT INTO store VALUES (7, "Apples", 2.99, 40, 3);
+INSERT INTO store VALUES (8, "Milk", 2.99, 20, 4);
+INSERT INTO store VALUES (9, "Yogurt", 1.99, 15, 4);
+INSERT INTO store VALUES (10, "Butter", 3.99, 20, 4);
+INSERT INTO store VALUES (11, "Bread", 4.99, 15, 5);
+INSERT INTO store VALUES (12, "Bagels", 3.99, 15, 5);
+INSERT INTO store VALUES (13, "Chips", 2.99, 10, 6);
+INSERT INTO store VALUES (14, "Cookies", 4.99, 10, 6);
+INSERT INTO store VALUES (15, "Crackers", 2.99, 10, 6);
+
+--Display the database order by price
+SELECT item FROM store 
+ORDER BY price;
+
+-- What is the average price of items in the the dairy aisle?
+SELECT AVG(price) "avg dairy item price"
+FROM store
+WHERE aisle='4';
+
+-- What are the 5 items that need to be restocked?
+SELECT item, price, quantity
+FROM store
+ORDER BY quantity desc
+LIMIT 5;
