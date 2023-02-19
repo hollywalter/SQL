@@ -1,4 +1,4 @@
-#In this SQL code, I am querying a database that is holding data pertaining to [NASA astronauts](https://gist.github.com/pamelafox/b98e03caca7d1ec14394a90ec1512cff) in order to answer questions about the data.
+#In this SQL code, I am querying a database that is holding data pertaining to NASA astronauts in order to answer questions about the data.
 
 #1. What is the average number of space flights for each astronaut?
 SELECT Name, AVG(Space_Flights) AS avg_spaceflights 
