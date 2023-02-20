@@ -1,0 +1,53 @@
+# For this project, I downloaded Spotify data from Kaggle.
+# Then I created a table to insert the Spotify data into.
+# Finally, I performed analytics on the data using SQL.
+
+# Creating the table:
+CREATE TABLE BIT_DB.Spotifydata (
+id INTEGER PRIMARY KEY,
+artist_name varchar NOT NULL,
+track_name varchar NOT NULL,
+track_id varchar NOT NULL,
+popularity INTEGER NOT NULL,
+danceability DECIMAL (4,3) NOT NULL,
+energy DECIMAL (4,3) NOT NULL,
+song_key INTEGER NOT NULL,
+loudness DECIMAL (5,3) NOT NULL,
+song_mode INTEGER NOT NULL,
+speechiness DECIMAL (5,4) NOT NULL,
+acousticness DECIMAL (6,5) NOT NULL,
+instrumentalness TEXT NO NULL,
+liveness DECIMAL (5,4) NOT NULL,
+valence DECIMAL (6,3) NOT NULL,
+tempo DECIMAL (6,3) NOT NULL,
+duration_ms INTEGER NOT NULL,
+time_signature INTEGER NOT NULL );
+
+# Then I inserted the Spotify Data .csv into the table.
+# Next, I explored the data using the following SQL.
+
+
+# First I determined the average popularity, danceability, and energy by artist and track.
+SELECT 
+artist_name,
+track_name,
+AVG(popularity),
+AVG(danceability),
+AVG(energy)
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name, track_name;
+
+# Then I determined the top 10 songs and their artists by popularity.
+SELECT track_name, artist_name, popularity
+FROM BIT_DB.Spotifydata
+ORDER BY popularity DESC
+LIMIT 10;
+
+# Then I determined how many artists had multiple tracks and the average popularity for each artist.
+SELECT 
+artist_name, 
+COUNT(track_name), 
+AVG(popularity)
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY COUNT(track_name) DESC;
