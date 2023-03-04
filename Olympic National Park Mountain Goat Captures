@@ -1,0 +1,22 @@
+/*
+In this project, I took mountain goat capture location data from the Olympic National Park Mountain Goat Translocation Project, created a new database, tables, and imported CSV files in order to analyze the data.
+
+Skills used: Table Creation, Aggregate Functions
+
+-- Overall count of captures grouped by the year completed.
+SELECT Year, COUNT(YEAR) AS Captures
+FROM captures
+GROUP BY Year;
+
+-- Which area had the most overall captures? 
+SELECT Area, COUNT(Area)
+FROM captures
+GROUP BY Area
+ORDER BY COUNT(Area) DESC
+LIMIT 1;
+
+-- Which area had the most captures for each respective year? 
+SELECT Year, Area, Max(Count) 
+FROM areas
+GROUP BY Year
+ORDER BY Year;
