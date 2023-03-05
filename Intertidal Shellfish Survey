@@ -1,7 +1,5 @@
 /* In this project, I went out into the field to collect population counts of primarily Manila Littleneck clams and Native Littleneck clams within a historic superfund site post CERCLA cleanup. This data was then mapped using ArcGIS, analyzed in SQL, and then visualized in Tableau.
 
-![Shellfish](https://user-images.githubusercontent.com/125215991/222940389-93f1a8b9-94c1-41e1-94e9-4672761be199.JPG)
-
 -- What is the total count of Manila Littleneck clams and Native Littleneck clams found in each transect?
 SELECT Transect, SUM(Manila) AS Manila, SUM(Native) AS Native
 FROM shellfish
