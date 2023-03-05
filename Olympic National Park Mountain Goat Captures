@@ -1,7 +1,8 @@
 /*
 In this project, I took mountain goat capture location data from the Olympic National Park Mountain Goat Translocation Project and visualized it in ArcMap, created a new SQL database and tables, then imported the CSV files in order to analyze the data.
+*/
 
-Skills used: GIS Map Creation, Cartography, Table Creation, Aggregate Functions
+-- Skills used: GIS Map Creation, Cartography, Table Creation, Aggregate Functions
 
 -- Overall count of captures grouped by the year completed.
 SELECT Year, COUNT(YEAR) AS Captures
@@ -20,4 +21,3 @@ SELECT Year, Area, Max(Count)
 FROM areas
 GROUP BY Year
 ORDER BY Year;
-
