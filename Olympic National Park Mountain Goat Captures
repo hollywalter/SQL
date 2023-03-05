@@ -20,3 +20,4 @@ SELECT Year, Area, Max(Count)
 FROM areas
 GROUP BY Year
 ORDER BY Year;
+
